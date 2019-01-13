@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
 	layout "portfolio" 
-	
+
 	before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
 
 
@@ -30,7 +30,8 @@ class PortfoliosController < ApplicationController
 		respond_to do |format|
 	       if @portfolio_item.save
 	        format.html { redirect_to portfolios_path, notice: 'Portfolio Item was successfully created.' }
-
+	       else
+	       	format.html{render :new} 
 	       end
 		end
 	end	
@@ -39,6 +40,8 @@ class PortfoliosController < ApplicationController
 		respond_to do |format|
 		    if @portfolio_item.update(portfolio_params)
 		        format.html { redirect_to portfolios_url, notice: 'Portfolio Item successfully updated.' }
+		    else
+	       		format.html{render :edit} 
 		    end
     	end
 	end
