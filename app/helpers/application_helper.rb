@@ -16,4 +16,9 @@ module ApplicationHelper
 	    end 
 		
 	end
+
+	def copyright_generator
+		 MakdViewTool::Renderer.copyright 'Maria Makantasi','All rights reserved'
+	end
+
 end
