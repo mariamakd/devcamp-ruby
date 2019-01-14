@@ -6,8 +6,9 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
-    @page_title= "My Portfolio Blog"
+
+    @blogs = Blog.page(params[:page]).per(5)
+    @page_title = "My Portfolio Blog"
   end
 
   # GET /blogs/1
@@ -71,10 +72,10 @@ class BlogsController < ApplicationController
       @blog.published!
     elsif @blog.published?
       @blog.draft!
-    end  
-          
+    end
+
     redirect_to blogs_url,notice: 'Post status has been updated'
-  end  
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
