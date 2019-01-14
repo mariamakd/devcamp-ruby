@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-	layout "portfolio" 
+	layout "portfolio"
 	access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
 	before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
@@ -7,18 +7,18 @@ class PortfoliosController < ApplicationController
 
 	def index
 		@portfolio_items=Portfolio.all
-	end	
+	end
 
 	def angular
 		@angular_portfolio_items=Portfolio.angular
-	end	
+	end
 
 
 
 	def new
 		@portfolio_item = Portfolio.new
 		3.times{@portfolio_item.technologies.build}
-	end	
+	end
 
 	def show
     end
@@ -32,17 +32,17 @@ class PortfoliosController < ApplicationController
 	       if @portfolio_item.save
 	        format.html { redirect_to portfolios_path, notice: 'Portfolio Item was successfully created.' }
 	       else
-	       	format.html{render :new} 
+	       	format.html{render :new}
 	       end
 		end
-	end	
+	end
 
 	def update
 		respond_to do |format|
 		    if @portfolio_item.update(portfolio_params)
 		        format.html { redirect_to portfolios_url, notice: 'Portfolio Item successfully updated.' }
 		    else
-	       		format.html{render :edit} 
+	       		format.html{render :edit}
 		    end
     	end
 	end
