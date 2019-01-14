@@ -1,4 +1,5 @@
 @import "bootstrap";
+
 /*
  * Globals
  */
@@ -160,7 +161,25 @@ body {
   }
 }
 
-h1, .h1 {
-    font-size: 2.3rem;
+/*
+ * Custom Styles
+ */
+
+.card-block {
+  color: black;
+  text-align: left;
 }
 
+.auth-links a {
+  color: black;
+}
+
+.register-text {
+  text-align: right;
+}
+
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
+}
