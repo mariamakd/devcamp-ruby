@@ -1,29 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <%= image_tag @portfolio_item.main_image %>
+    </div>
 
+    <div class="col-md-5">
+      <h1><%= @portfolio_item.title %></h1>
 
-  <%= image_tag @portfolio_item.main_image unless @portfolio_item.main_image.nil? %>
+      <hr>
 
+      <em><%= @portfolio_item.subtitle %></em>
 
-<p>
-  <strong>Title:</strong>
-  <%= @portfolio_item.title %>
-</p>
-<p>
-  <strong>Subtitle:</strong>
-  <%= @portfolio_item.subtitle %>
-</p>
+      <p><%= @portfolio_item.body %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @portfolio_item.body %>
-</p>
+      <hr>
 
-<h2>Technologies Used:</h2>
-<% @portfolio_item.technologies.each do |t| %>
-<p><%=t.name %></p>
-<% end %>
+      <h3>Technologies Used:</h3>
 
-
-
-<%= link_to 'Edit', edit_portfolio_path(@portfolio_item) if logged_in?(:site_admin) %> |
-<%= link_to 'Back', portfolios_path %>
+      <% @portfolio_item.technologies.each do |t| %>
+      <p><%= t.name %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
