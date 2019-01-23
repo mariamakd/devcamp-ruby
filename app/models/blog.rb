@@ -9,6 +9,9 @@ class Blog < ApplicationRecord
 
     belongs_to :topic
 
+    has_many :comments
+
+
 	def set_defaults
 		self.topic_id ||= Topic.last.id
 	end
