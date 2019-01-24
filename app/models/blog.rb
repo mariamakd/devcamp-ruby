@@ -9,7 +9,7 @@ class Blog < ApplicationRecord
 
     belongs_to :topic
 
-    has_many :comments
+    has_many :comments, dependent: :destroy
 
 
 	def set_defaults
