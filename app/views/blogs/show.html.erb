@@ -2,6 +2,18 @@
 
   <h2><%= @blog.title %></h2>
 
+<nav aria-label="breadcrumb" >
+  <ol class="breadcrumb">
+     <%= link_to 'Home', root_path, class: 'breadcrumb-item'  %>
+     <%= link_to @blog.topic.title, topic_path(@blog.topic), class: 'breadcrumb-item'  %>
+    <li class="breadcrumb-item active" aria-current="page"><%= @blog.title %></li>
+     <li class="ml-auto"><%= link_to fa_icon('pencil-square-o'), edit_blog_path(@blog) if logged_in?(:site_admin) %> </li>
+     <li style="margin-left: 2px;"><%= link_to fa_icon('trash'), @blog, method: :delete, data: { confirm: 'Are you sure you want to delete this post?'} if logged_in?(:site_admin) %> </li>
+  </ol>
+</nav>
+
+
+
   <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
   <p>
     <%= @blog.topic.title %>
