@@ -5,7 +5,7 @@ class Blog < ApplicationRecord
 
     after_initialize :set_defaults
 
-    validates_presence_of :title, :body
+    validates_presence_of :title, :body, :topic_id
 
     belongs_to :topic
 
@@ -15,5 +15,9 @@ class Blog < ApplicationRecord
 	def set_defaults
 		self.topic_id ||= Topic.last.id
 	end
+
+  def self.recent
+    order("created_at DESC")
+  end
 
 end

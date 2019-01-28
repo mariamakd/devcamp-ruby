@@ -16,7 +16,7 @@
   <body>
 
     <%= render 'shared/blog_nav' %>
-    <%= render 'shared/blog_masthead' unless logged_in?(:site_admin) %>
+    <%= render 'shared/blog_masthead'%>
 
     <div class="container">
 
@@ -27,6 +27,8 @@
         <%= render 'shared/blog_sidebar' %>
       </div>
       <%= render 'shared/blog_footer' %>
+       <%= alerts %>
+
 
         <%= source_helper("blog") %>
     </div>
