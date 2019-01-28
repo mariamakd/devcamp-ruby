@@ -225,3 +225,29 @@ body {
 .tech-news a {
   color: green;
 }
+
+.app-card-container {
+  color: black;
+  text-align: left;
+}
+
+.app-card-container > .card {
+  padding: 40px;
+}
+
+.profile-img {
+  border: 1px solid grey;
+}
+
+.app-card-container a {
+  color: blue;
+}
+
+.card-block {
+
+  margin-bottom: 5px;
+}
+.skill {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
