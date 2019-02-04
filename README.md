@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application created during Dissecting Rails 5 course on Udemy. 
+Features
+* Portfolio 
+* Blog with real time channel for  
+* Drag and drop functionality for images, which are saved in S3
 
-Things you may want to cover:
-
+Technical features
 * Ruby version 2.6.0
+* Ruby on rails
+* PostgreSQL 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
