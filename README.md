@@ -1,6 +1,7 @@
 # README
 
 This is an application created during Dissecting Rails 5 course on Udemy. 
+
 Features
 * Portfolio 
 * Blog with real time channel for  
